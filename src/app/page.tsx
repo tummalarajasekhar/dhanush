@@ -1,19 +1,19 @@
 // pages/index.js
 "use client"
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState,} from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const services = [
     {
@@ -395,7 +395,7 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Client <span className="text-blue-400">Testimonials</span></h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Hear what our clients have to say about working with us and the results we've delivered.
+              Hear what our clients have to say about working with us and the results we&apos;ve delivered.
             </p>
           </motion.div>
           
@@ -408,7 +408,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className={`absolute inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col ${activeTestimonial === index ? 'z-10' : 'z-0'}`}
               >
-                <div className="text-4xl mb-4">"</div>
+                <div className="text-4xl mb-4">&quot;</div>
                 <p className="text-lg mb-6 flex-1">{testimonial.content}</p>
                 <div className="flex items-center">
                   <div className="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center mr-4">
