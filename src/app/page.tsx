@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useState,} from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import MultiStepForm from '../components/MultiStepForm';
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -177,7 +178,7 @@ export default function Home() {
     </nav> */}
 
        
-<div className="relative h-screen flex items-center justify-center text-center">
+<div className="relative h-auto flex items-center justify-center text-center">
 <Hero  />
 </div>
 
@@ -236,6 +237,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section> */}
+       
 
       {/* About Section */}
       <section id="about" className="py-20 px-6 bg-gray-800 bg-opacity-50">
