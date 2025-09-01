@@ -102,49 +102,55 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-8 z-10 top-10">
+        <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-8 z-10 top-10">
             <div
                 id="particles-js"
                 className="absolute w-full h-full top-0 left-0 z-0"
             />
-            <h1 className="font-clash top-10 font-bold text-4xl md:text-5xl lg:text-6xl mb-6 max-w-4xl mx-auto">
+            <h1 className="font-clash top-10 font-bold text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl mx-auto">
                 We Build Digital Experiences That Convert.
             </h1>
 
             <motion.div
-  animate={{
-    width: expanded ? 600 : 200,   // 👈 grow width
-    height: expanded ? 495 : 60,   // 👈 grow height
-  }}
-  transition={{ duration: 0.6, ease: "easeInOut" }}
-  className={`bg-gradient-to-r from-blue-500 to-purple-600 duration-500 rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative transition-all duration-700 ease-out transform ${
-        show ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      }`}
->
-  {!expanded && (
-    <motion.button
-      onClick={() => setExpanded(true)}
-      className={`text-white font-medium overflow-hidden py-2 px-4 `}
-    >
-      Start a Project
-    </motion.button>
-  )}
+                animate={{
+                    width: expanded
+                        ? (window.innerWidth < 640 ? '100%' : window.innerWidth < 1024 ? 400 : 600)
+                        : (window.innerWidth < 640 ? '100%' : 200),
+                    height: expanded
+                        ? (window.innerWidth < 640 ? 'auto' : 495)
+                        : (window.innerWidth < 640 ? 60 : 60),
+                }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className={`bg-gradient-to-r from-blue-500 to-purple-600 duration-500 rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative transition-all duration-700 ease-out transform ${
+                    show ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                } w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl`}
+                style={{
+                    minWidth: expanded ? undefined : 'auto',
+                }}
+            >
+                {!expanded && (
+                    <motion.button
+                        onClick={() => setExpanded(true)}
+                        className="text-white font-medium overflow-hidden py-2 px-4 w-full sm:w-auto"
+                    >
+                        Start a Project
+                    </motion.button>
+                )}
 
-  <AnimatePresence>
-    {expanded && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="w-full   text-black overflow-hidden  "
-      >
-        <MultiStepForm />
-      </motion.div>
-    )}
-  </AnimatePresence>
-</motion.div>
-
+                <AnimatePresence>
+                    {expanded && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                            className="w-full text-black overflow-hidden"
+                        >
+                            <MultiStepForm />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </motion.div>
         </section>
     );
 };
