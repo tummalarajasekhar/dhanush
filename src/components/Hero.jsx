@@ -114,11 +114,11 @@ const Hero = () => {
             <motion.div
                 animate={{
                     width: expanded
-                        ? (window.innerWidth < 640 ? '100%' : window.innerWidth < 1024 ? 400 : 600)
-                        : (window.innerWidth < 640 ? '100%' : 200),
+                        ? (typeof window !== "undefined" && window.innerWidth < 640 ? '100%' : typeof window !== "undefined" && window.innerWidth < 1024 ? 400 : 600)
+                        : (typeof window !== "undefined" && window.innerWidth < 640 ? '100%' : 200),
                     height: expanded
-                        ? (window.innerWidth < 640 ? 'auto' : 495)
-                        : (window.innerWidth < 640 ? 60 : 60),
+                        ? (typeof window !== "undefined" && window.innerWidth < 640 ? 'auto' : 495)
+                        : (typeof window !== "undefined" && window.innerWidth < 640 ? 60 : 60),
                 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className={`bg-gradient-to-r from-blue-500 to-purple-600 duration-500 rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative transition-all duration-700 ease-out transform ${
