@@ -114,10 +114,10 @@ const Hero = () => {
             <motion.div
   animate={{
     width: expanded ? 600 : 200,   // 👈 grow width
-    height: expanded ? '100vh' : 60,   // 👈 grow height
+    height: expanded ? 495 : 60,   // 👈 grow height
   }}
   transition={{ duration: 0.6, ease: "easeInOut" }}
-  className={`bg-gradient-to-r from-blue-500 to-purple-600 duration-500 rounded-lg shadow-lg flex items-center justify-center overflow-hidden relative transition-all duration-700 ease-out transform ${
+  className={`bg-gradient-to-r from-blue-500 to-purple-600 duration-500 rounded-xl shadow-lg flex items-center justify-center overflow-hidden relative transition-all duration-700 ease-out transform ${
         show ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
 >
@@ -137,7 +137,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="w-full h-full  text-black overflow-hidden  "
+        className="w-full   text-black overflow-hidden  "
       >
         <MultiStepForm />
       </motion.div>

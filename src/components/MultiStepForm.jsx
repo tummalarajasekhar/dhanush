@@ -261,7 +261,7 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-transparent overflow-hidden flex   justify-center p-1">
+    <div className="h-auto  bg-transparent overflow-hidden flex   justify-center p-1">
       <div className="w-full  bg-gray-800 rounded-xl shadow-2xl overflow-hidden  ">
         <div className=" p-6 bg-gray-900">
           <h2 className="text-xl font-bold text-white">Project Requirements</h2>
